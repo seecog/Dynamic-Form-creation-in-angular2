@@ -1,0 +1,30 @@
+<form [formGroup]="frm">
+First Name : <input formControlName="first_name" class="form-control">
+<br>
+Specality : <input formControlName="speciality" class="form-control">
+<br>
+<div class="pull-right">
+  <button class="btn btn-primary" (click)="addPatient()">+Add</button>
+</div>
+<div formArrayName="patients">
+<div *ngFor="let x of frm.get('patients').controls;let i=index;" [formGroupName]="i">
+
+
+<div class="panel panel-primary" style="border:1px solid #eee;margin : 10px;">
+<div class="panel-heading">
+  #{{i}}
+</div>
+<div class="panel-body">
+Patient Name : <input formControlName="pname" class="form-control"><br>
+Patient Disease : <input formControlName="disease" class="form-control"><br>
+</div>
+  </div>
+
+
+</div>
+
+</div>
+<br>
+<button (click)="saveDoc()">Save</button>)
+
+</form>

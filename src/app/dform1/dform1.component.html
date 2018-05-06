@@ -1,0 +1,8 @@
+<form [formGroup]="myForm">
+<div>
+  First Name : <input class="form-control" formControlName="first_name">
+<div *ngIf="myForm.get('first_name').errors">
+<span *ngIf="myForm.get('first_name').errors.required">First Name Required</span>
+</div>
+</div>
+</form>
